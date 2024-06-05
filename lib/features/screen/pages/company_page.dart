@@ -35,108 +35,202 @@ class _CompanyPageState extends State<CompanyPage>
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Container(
-            color: Colors.white,
-      child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Logo(),
-          Container(
-            height: MediaQuery.of(context).size.height * .2,
-            margin: EdgeInsets.symmetric(horizontal: 40),
-            child:Row(children: [
-              Expanded(child: Text("Quienes somos")),
+    var d = [
+      Container(
+          height: MediaQuery.of(context).size.height * .2,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: Row(
+            children: [
+              Expanded(child: Column(
+                children: [
+                  Text("Quienes somos",style:TextStyle(color:Colors.black,fontSize: MediaQuery.of(context).size.height * .02)),
+                  Text("Nuestro desafio",style:TextStyle(color:Colors.black,fontSize:  MediaQuery.of(context).size.height * .01)),
+                ],
+              )),
               Expanded(child: Image.asset("assets/logo.png")),
-            ],)
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * .2,
-            margin: EdgeInsets.symmetric(horizontal: 40),
-            child:Row(children: [
+            ],
+          )),
+      Container(
+          height: MediaQuery.of(context).size.height * .2,
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          child: Row(
+            children: [
               Expanded(child: Image.asset("assets/logo.png")),
-              Expanded(child: Text("Nuestro desafio")),
-            ],)
-          ),
-          Container(
-            color: Colors.blue,
-            margin: EdgeInsets.all(20),
-            height: MediaQuery.of(context).size.height * .15,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Row(
-                    children: [
-                      IconButton(
-                        splashRadius: 100,
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          if (_pageViewController.page == 0) {
-                            return;
-                          }
-                          _pageViewController.animateToPage(
-                              _pageViewController.page!.toInt() - 1,
-                              duration: Duration(milliseconds: 300),
-                              curve: Curves.linear);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_left_rounded,
-                          size: 100.0,
-                        ),
-                      ),
-                      Expanded(
-                        child: PageView(
-                          /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-                          /// Use [Axis.vertical] to scroll vertically.
-                          controller: _pageViewController,
-                          onPageChanged: _handlePageViewChanged,
-                          children: <Widget>[
-                            Center(
-                              child:
-                                  Text('Caso 1', style: textTheme.titleLarge),
-                            ),
-                            Center(
-                              child:
-                                  Text('Caso 1', style: textTheme.titleLarge),
-                            ),
-                            Center(
-                              child:
-                                  Text('Caso 1', style: textTheme.titleLarge),
-                            ),
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                        splashRadius: 100.0,
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          if (_pageViewController.page == 2.0) {
-                            return;
-                          }
-                          _pageViewController.animateToPage(
-                              _pageViewController.page!.toInt() + 1,
-                              duration: Duration(milliseconds: 300),
-                              curve: Curves.linear);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_right_rounded,
-                          size: 100.0,
-                        ),
-                      ),
-                    ],
+              Expanded(child: Column(
+                children: [
+                  Text("Nuestro desafio",style:TextStyle(color:Colors.black,fontSize: MediaQuery.of(context).size.height * .02)),
+                  Text("Nuestro desafio",style:TextStyle(color:Colors.black,fontSize:  MediaQuery.of(context).size.height * .01)),
+                ],
+              )),
+            ],
+          )),
+                  Text("Casos de Exito",style:TextStyle(color:Colors.black,fontSize: MediaQuery.of(context).size.height * .02)),
+      Container(
+        margin: EdgeInsets.all(20),
+        height: MediaQuery.of(context).size.height * .15,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  IconButton(
+                    splashRadius: 100,
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      if (_pageViewController.page == 0) {
+                        return;
+                      }
+                      _pageViewController.animateToPage(
+                          _pageViewController.page!.toInt() - 1,
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.linear);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_left_rounded,
+                      size: 100.0,
+                    ),
                   ),
+                  Expanded(
+                    child: PageView(
+                      /// [PageView.scrollDirection] defaults to [Axis.horizontal].
+                      /// Use [Axis.vertical] to scroll vertically.
+                      controller: _pageViewController,
+                      onPageChanged: _handlePageViewChanged,
+                      children: <Widget>[
+                        Container(
+                          child: Row(
+                            children: [SizedBox(
+        child: CircleAvatar(
+          radius: 40.0,
+          backgroundColor: Colors.white,
+          child: CircleAvatar(
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                radius: 12.0,
+                child: Icon(
+                  Icons.camera_alt,
+                  size: 15.0,
+                  color: Color(0xFF404040),
                 ),
-                PageIndicator(
-                  tabController: _tabController,
-                  currentPageIndex: _currentPageIndex,
-                  onUpdateCurrentPageIndex: _updateCurrentPageIndex,
-                  isOnDesktopAndWeb: _isOnDesktopAndWeb,
-                ),
-              ],
+              ),
             ),
+            radius: 38.0,
+            backgroundImage: AssetImage(
+              'assets/logo.png'),
           ),
+        ),
+      ),
+                              Expanded(
+                                child: Container(
+                                  child: Text('Caso 1', style: textTheme.titleLarge),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Center(
+                          child: Text('Caso 1', style: textTheme.titleLarge),
+                        ),
+                        Center(
+                          child: Text('Caso 1', style: textTheme.titleLarge),
+                        ),
+                      ],
+                    ),
+                  ),
+                  IconButton(
+                    splashRadius: 100.0,
+                    padding: EdgeInsets.zero,
+                    onPressed: () {
+                      if (_pageViewController.page == 2.0) {
+                        return;
+                      }
+                      _pageViewController.animateToPage(
+                          _pageViewController.page!.toInt() + 1,
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.linear);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_right_rounded,
+                      size: 100.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            PageIndicator(
+              tabController: _tabController,
+              currentPageIndex: _currentPageIndex,
+              onUpdateCurrentPageIndex: _updateCurrentPageIndex,
+              isOnDesktopAndWeb: _isOnDesktopAndWeb,
+            ),
+          ],
+        ),
+      ),
+    ];
+
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                  padding: EdgeInsets.all(MediaQuery.of(context).size.width * .1),
+                  child: Logo()),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: List.generate(d.length,(index){
+                    return d[index];
+                  }),
+                ),
+              ),
+            ],
+          ),     
+            Positioned(
+                      bottom: 0,
+                      left: 0,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        child: Center(
+                          child: Container(
+                            padding: EdgeInsets.all(
+                                MediaQuery.of(context).size.width * .1),
+                            child: TextButton(
+                                onPressed: () {
+                                },
+                                child: (true)?Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 100, vertical: 10),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Color(0xFF304c9c), width: 5),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: Text("Atras",
+                                        style:
+                                            TextStyle(color: Color(0xFF304c9c)))):Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 100, vertical: 10),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color: Colors.white, width: 5),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    child: Text("Atras",
+                                        style:
+                                            TextStyle(color: Colors.white)))),
+                          ),
+                        ),
+                      )),
+       
         ],
       ),
     );

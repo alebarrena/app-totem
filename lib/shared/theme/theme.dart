@@ -6,7 +6,7 @@ class InnovattiTheme{
         useMaterial3: true,
         textTheme: TextTheme(
           bodySmall: TextStyle(fontSize: 40,color:Colors.blue),
-          bodyMedium: TextStyle(fontSize: 60,color:Colors.red),
+          bodyMedium: TextStyle(fontSize: 60,color:Colors.white),
           bodyLarge: TextStyle(fontSize: 40,color:Colors.yellow),
           titleLarge: TextStyle(fontSize: 50),
           titleMedium: TextStyle(fontSize: 50),

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:innvatti/components/layout/layout.dart';
+import 'package:innvatti/features/main/main_screen.dart';
 import 'package:innvatti/features/screen/pages/company_page.dart';
 import 'package:innvatti/features/screen/pages/product_detail_page.dart';
 import 'package:innvatti/features/screen/pages/products_page.dart';
@@ -34,25 +35,23 @@ void main() async {
     await windowManager.setFullScreen(true);
   });
   }*/
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Totem',
       theme: InnovattiTheme.light,
-      builder: (context, widget) => Layout(initialWidget: widget!),
-      initialRoute: "/",
-      routes: {
-        '/': (context) => ScreenPage(title: 'Totem Homepage'),
-        CompanyPage.route: (context) => CompanyPage(),
+      home:MainScreen(),
+      /*routes: {
+        '/': (context) => Layout(initialWidget: ScreenPage(title: 'Totem Homepage'),screenSaver: true,),
+        CompanyPage.route: (context) => Layout(initialWidget: CompanyPage(),screenSaver: false,),
         ProductsPage.route: (context) => ProductsPage(),
         ProductDetailPage.route: (context) => ProductDetailPage()
-      },
+      },*/
     );
   }
 }
