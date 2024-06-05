@@ -85,8 +85,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(
-        "assets/intro.mp4"); //VideoPlayerController.file(File("C:\\Users\\USUARIO\\Documents\\app-totem\\assets\\intro.mp4")):
+    _controller = VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));// VideoPlayerController.asset("assets/intro.mp4"); 
     _controller.initialize().then((value) {
       if (_controller.value.isInitialized) {
         _controller.setLooping(true);

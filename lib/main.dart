@@ -30,7 +30,7 @@ void main() async {
     windowButtonVisibility: false,
   );
   windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
+z    await windowManager.show();
     await windowManager.focus();
     await windowManager.setFullScreen(true);
   });

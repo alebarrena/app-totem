@@ -13,7 +13,6 @@ class ProductScreen extends StatefulWidget {
 class _ProductScreenState extends State<ProductScreen> {
   TargetPlatform? _platform;
   late VideoPlayerController _videoPlayerController1;
-  late VideoPlayerController _videoPlayerController2;
   ChewieController? _chewieController;
   int? bufferDelay;
 
@@ -26,7 +25,6 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   void dispose() {
     _videoPlayerController1.dispose();
-    _videoPlayerController2.dispose();
     _chewieController?.dispose();
     super.dispose();
   }
@@ -40,11 +38,8 @@ class _ProductScreenState extends State<ProductScreen> {
   Future<void> initializePlayer() async {
     _videoPlayerController1 =
         VideoPlayerController.networkUrl(Uri.parse(srcs[currPlayIndex]));
-    _videoPlayerController2 =
-        VideoPlayerController.networkUrl(Uri.parse(srcs[currPlayIndex]));
     await Future.wait([
-      _videoPlayerController1.initialize(),
-      _videoPlayerController2.initialize()
+      _videoPlayerController1.initialize()
     ]);
     _createChewieController();
     setState(() {});
