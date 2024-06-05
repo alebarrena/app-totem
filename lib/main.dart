@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,12 +13,13 @@ import 'package:window_manager/window_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await windowManager.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
     final license =
         await rootBundle.loadString('google_fonts/Roboto/LICENSE.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
+  /*if(Platform.isWindows){
+  await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
     size: Size(800, 600),
     center: true,
@@ -30,6 +33,7 @@ void main() async {
     await windowManager.focus();
     await windowManager.setFullScreen(true);
   });
+  }*/
   runApp(const MyApp());
 }
 
@@ -41,9 +45,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Totem',
       theme: InnovattiTheme.light,
-      home: const ScreenPage(title: 'Totem Homepage'),
       builder: (context, widget) => Layout(initialWidget: widget!),
+      initialRoute: "/",
       routes: {
+        '/': (context) => ScreenPage(title: 'Totem Homepage'),
         CompanyPage.route: (context) => CompanyPage(),
         ProductsPage.route: (context) => ProductsPage(),
         ProductDetailPage.route: (context) => ProductDetailPage()

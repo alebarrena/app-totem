@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:innvatti/features/screen/screen.dart';
 import 'package:video_player/video_player.dart';
 
 class Layout extends StatefulWidget {
@@ -42,9 +43,8 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // Use a FutureBuilder to display a loading spinner while waiting for the
-        // VideoPlayerController to finish initializing.
-        body: (screenSaver)
+      backgroundColor: Colors.red,
+        body: (false)
             ? GestureDetector(
                 onTap: () {
                   _timer.cancel();
@@ -58,8 +58,8 @@ class _LayoutState extends State<Layout> {
                   });
                   print(screenSaver);
                 },
-                child: ScreenSaver())
-            : Container(color: Colors.blue));
+                child: Container(color:Colors.red))
+            : widget.initialWidget);
   }
 }
 
