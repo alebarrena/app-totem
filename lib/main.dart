@@ -19,7 +19,7 @@ void main() async {
         await rootBundle.loadString('google_fonts/Roboto/LICENSE.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
-  /*if(Platform.isWindows){
+  if(Platform.isWindows){
   await windowManager.ensureInitialized();
   WindowOptions windowOptions = const WindowOptions(
     size: Size(800, 600),
@@ -30,11 +30,11 @@ void main() async {
     windowButtonVisibility: false,
   );
   windowManager.waitUntilReadyToShow(windowOptions, () async {
-z    await windowManager.show();
+    await windowManager.show();
     await windowManager.focus();
     await windowManager.setFullScreen(true);
   });
-  }*/
+  }
   runApp( MyApp());
 }
 
