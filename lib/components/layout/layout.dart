@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -71,40 +72,51 @@ class ScreenSaver extends StatefulWidget {
 
 class _ScreenSaverState extends State<ScreenSaver> {
   late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
-  late Timer _timer;
+
   @override
   void initState() {
     super.initState();
-
-    // Create and store the VideoPlayerController. The VideoPlayerController
-    // offers several different constructors to play videos from assets, files,
-    // or the internet.
-
-    _controller = VideoPlayerController.asset("assets/intro.mp4")
-      ..initialize().then((value) => {setState(() {})});
+    _controller = VideoPlayerController.file(File("C:\\Users\\USUARIO\\Documents\\app-totem\\assets\\intro.mp4"));
+    _controller.initialize().then((value) {
+      if (_controller.value.isInitialized) {
     _controller.setLooping(true);
     _controller.setVolume(0.0);
+        _controller.play();
+        setState(() {});
+      } else {
+        //log("video file load failed");
+      }
+    });
     _controller.play();
-    _initializeVideoPlayerFuture = _controller.initialize();
   }
 
   @override
   void dispose() {
-    // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-    _timer.cancel();
     super.dispose();
+    _controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    return Stack(
+            children: <Widget>[
+              SizedBox.expand(
+                child: FittedBox(
+                  fit: BoxFit.cover,
+                  child: SizedBox(
+                    width: _controller.value.size?.width ?? 0,
+                    height: _controller.value.size?.height ?? 0,
+                    child: VideoPlayer(_controller),
+                  ),
+                ),
+              ),
+              //FURTHER IMPLEMENTATION
+            ],
+          );
+    /*return FutureBuilder(
       future: _initializeVideoPlayerFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          // If the VideoPlayerController has finished initialization, use
-          // the data it provides to limit the aspect ratio of the video.
           return Stack(
             children: <Widget>[
               SizedBox.expand(
@@ -128,6 +140,6 @@ class _ScreenSaverState extends State<ScreenSaver> {
           );
         }
       },
-    );
+    );*/
   }
 }

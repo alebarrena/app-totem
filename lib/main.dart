@@ -7,12 +7,28 @@ import 'package:innvatti/features/screen/pages/product_detail_page.dart';
 import 'package:innvatti/features/screen/pages/products_page.dart';
 import 'package:innvatti/features/screen/screen.dart';
 import 'package:innvatti/shared/theme/theme.dart';
+import 'package:window_manager/window_manager.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
     final license =
         await rootBundle.loadString('google_fonts/Roboto/LICENSE.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
+  WindowOptions windowOptions = const WindowOptions(
+    size: Size(800, 600),
+    center: true,
+    backgroundColor: Colors.transparent,
+    skipTaskbar: false,
+    titleBarStyle: TitleBarStyle.hidden,
+    windowButtonVisibility: false,
+  );
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
+    await windowManager.show();
+    await windowManager.focus();
+    await windowManager.setFullScreen(true);
   });
   runApp(const MyApp());
 }
