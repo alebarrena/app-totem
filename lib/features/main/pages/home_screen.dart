@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w800,
-                                        fontSize: 35,
+                                        fontSize:  (MediaQuery.of(context).size.width) * .01,
                                       )))),
                         ),
                       ],

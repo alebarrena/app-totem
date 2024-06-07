@@ -85,7 +85,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));// VideoPlayerController.asset("assets/intro.mp4"); 
+    _controller = VideoPlayerController.asset("assets/intro.mp4"); // VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));//
     _controller.initialize().then((value) {
       if (_controller.value.isInitialized) {
         _controller.setLooping(true);
@@ -151,7 +151,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
                               border: Border.all(color: Colors.white, width: 5),
                               borderRadius: BorderRadius.circular(30)),
                           child: Text("Iniciar",
-                              style: TextStyle(color: Colors.white)))),
+                              style: TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.width * .05)))),
                 ),
               ),
             )),

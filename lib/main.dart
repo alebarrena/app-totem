@@ -26,13 +26,13 @@ void main() async {
     center: true,
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
+   // titleBarStyle: TitleBarStyle.hidden,
     windowButtonVisibility: false,
   );
   windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
     await windowManager.focus();
-    await windowManager.setFullScreen(true);
+   // await windowManager.setFullScreen(true);
   });
   }
   runApp( MyApp());
