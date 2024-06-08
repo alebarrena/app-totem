@@ -42,6 +42,68 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    dynamic products= [
+      {
+        "name":"Pick/Put To Light",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-1.png",
+        "videos":[
+          "assets/product-1a.mp4",
+          "assets/product-1b.mp4",
+          "assets/product-1c.mp4",
+        ]
+      },
+      {
+        "name":"Pick/Put Cart",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-2.png",
+        "videos":[
+          "assets/product-2a.mp4",
+          "assets/product-2b.mp4",
+          "assets/product-2c.mp4",
+        ]
+      },
+      {
+        "name":"RFID",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-3.png",
+        "videos":[
+          "assets/product-3a.mp4",
+          "assets/product-3b.mp4",
+          "assets/product-3c.mp4",
+        ]
+      },
+      {
+        "name":"Soluciones logisticas",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-4.png",
+        "videos":[
+          "assets/product-4a.mp4",
+          "assets/product-4b.mp4",
+          "assets/product-4c.mp4",
+        ]
+      },
+    ];
     return Scaffold(
         backgroundColor: Color(0xFF243c9c),
         body: (screenSaver)
@@ -74,10 +136,10 @@ class _MainScreenState extends State<MainScreen> {
                     }):Container(),
                     //Company(),
                     (page == 'about-us')?CompanyScreen():Container(),
-                    (page == 'product-1')?ProductScreen():Container(),
-                    (page == 'product-2')?ProductScreen():Container(),
-                    (page == 'product-3')?ProductScreen():Container(),
-                    (page == 'product-4')?ProductScreen():Container(),
+                    (page == 'product-1')?ProductScreen(product:products[0]):Container(),
+                    (page == 'product-2')?ProductScreen(product:products[1]):Container(),
+                    (page == 'product-3')?ProductScreen(product:products[2]):Container(),
+                    (page == 'product-4')?ProductScreen(product:products[3]):Container(),
                     //CompanyScreen(),
                     //Product()
                     //ProductScreen()
@@ -93,7 +155,7 @@ class _MainScreenState extends State<MainScreen> {
                               child: TextButton(
                                   onPressed: () {
                                     setState(() {
-                                      screenSaver = true;
+                                      screenSaver = (page=='home')?true:false;
                                       page = 'home';
                                     });
                                   },

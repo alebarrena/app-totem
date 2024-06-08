@@ -310,10 +310,10 @@ class PageIndicator extends StatelessWidget {
             dotsCount: tabController.length,
             position: tabController.index,
             decorator: DotsDecorator(
-              size: const Size(100.0, 20.0),
+              size: const Size(100.0, 10.0),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0)),
-              activeSize: const Size(100.0, 20.0),
+              activeSize: const Size(100.0, 10.0),
               activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(0.0)),
             ),

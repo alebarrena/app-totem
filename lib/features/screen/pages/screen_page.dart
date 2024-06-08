@@ -66,12 +66,14 @@ class _ScreenPageState extends State<ScreenPage> {
                             children: [
                               Expanded(
                                 child: LargeButton(
+        image:"assets/product-2.png",
                                     onPressed: () {
                                     },
                                     child: Text("Sobre Nosotros")),
                               ),
                               Expanded(
                                 child: LargeButton(
+        image:"assets/product-2.png",
                                     onPressed: () {
                                     },
                                     child: Text("Sobre Nosotros")),
@@ -82,12 +84,14 @@ class _ScreenPageState extends State<ScreenPage> {
                             children: [
                               Expanded(
                                 child: LargeButton(
+        image:"assets/product-2.png",
                                     onPressed: () {
                                     },
                                     child: Text("Sobre Nosotros")),
                               ),
                               Expanded(
                                 child: LargeButton(
+        image:"assets/product-2.png",
                                     onPressed: () {
                                     },
                                     child: Text("Sobre Nosotros")),
@@ -95,6 +99,7 @@ class _ScreenPageState extends State<ScreenPage> {
                             ],
                           ),
                           LargeButton(
+        image:"assets/product-2.png",
                               onPressed: () {
                               },
                               child: Text("Sobre Nosotros")),

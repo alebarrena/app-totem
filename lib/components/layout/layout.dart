@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:innvatti/components/large-button/largebutton_component.dart';
 import 'package:innvatti/components/logo/logo.dart';
 import 'package:innvatti/features/screen/screen.dart';
+import 'package:innvatti/shared/assets_dir.dart';
 import 'package:video_player/video_player.dart';
 
 class Layout extends StatefulWidget {
@@ -85,7 +86,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset("assets/intro.mp4"); // VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));//
+    _controller = AssetsDir.video("assets/intro.mp4");//VideoPlayerController.asset("assets/intro.mp4"); // VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));//
     _controller.initialize().then((value) {
       if (_controller.value.isInitialized) {
         _controller.setLooping(true);
