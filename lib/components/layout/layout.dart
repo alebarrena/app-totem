@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:innvatti/components/large-button/largebutton_component.dart';
 import 'package:innvatti/components/logo/logo.dart';
 import 'package:innvatti/features/screen/screen.dart';
@@ -131,7 +132,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
                         padding: EdgeInsets.all(
                             MediaQuery.of(context).size.width * .1),
                         child: Logo())))),
-
+        Center(child:Column(mainAxisSize: MainAxisSize.min,children: [Text("Bienvenido".toUpperCase(),style:GoogleFonts.inter(fontWeight: FontWeight.w600,fontSize:MediaQuery.of(context).size.width * .08)),SizedBox(height:100),Image.asset("assets/arrows.png",width:MediaQuery.of(context).size.width * .07)],)),
         Positioned(
             bottom: 0,
             left: 0,
@@ -149,10 +150,10 @@ class _ScreenSaverState extends State<ScreenSaver> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 100, vertical: 10),
                           decoration: BoxDecoration(
-                              border: Border.all(color: Colors.white, width: 5),
-                              borderRadius: BorderRadius.circular(30)),
-                          child: Text("Iniciar",
-                              style: TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.width * .05)))),
+                              border: Border.all(color: Colors.white, width: 3),
+                              borderRadius: BorderRadius.circular(15)),
+                          child: Text("Ingresar >>",
+                              style: GoogleFonts.inter(textStyle: TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.width * .03))))),
                 ),
               ),
             )),

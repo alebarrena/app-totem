@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:innvatti/components/layout/layout.dart';
 import 'package:innvatti/features/main/pages/company_screen.dart';
 import 'package:innvatti/features/main/pages/home_screen.dart';
@@ -164,12 +165,12 @@ class _MainScreenState extends State<MainScreen> {
                                           horizontal: 100, vertical: 10),
                                       decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: (page == 'home')?Colors.white:Color(0xFF243c9c), width: 5),
+                                              color: (page == 'home')?Colors.white:Color(0xFF243c9c), width: 3),
                                           borderRadius:
-                                              BorderRadius.circular(30)),
-                                      child: Text("Atras",
+                                              BorderRadius.circular(15)),
+                                      child: Text("<< Volver",
                                           style:
-                                              TextStyle(color: (page == 'home')?Colors.white:Color(0xFF243c9c))))),
+                                              GoogleFonts.inter(textStyle: TextStyle(color: (page == 'home')?Colors.white:Color(0xFF243c9c)),fontSize: MediaQuery.of(context).size.width * .03)))),
                             ),
                           ),
                         )),

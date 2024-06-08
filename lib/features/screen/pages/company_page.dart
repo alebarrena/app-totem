@@ -214,7 +214,7 @@ class _CompanyPageState extends State<CompanyPage>
                                             color: Color(0xFF304c9c), width: 5),
                                         borderRadius:
                                             BorderRadius.circular(30)),
-                                    child: Text("Atras",
+                                    child: Text("<< Volver",
                                         style:
                                             TextStyle(color: Color(0xFF304c9c)))):Container(
                                     padding: EdgeInsets.symmetric(
@@ -224,7 +224,7 @@ class _CompanyPageState extends State<CompanyPage>
                                             color: Colors.white, width: 5),
                                         borderRadius:
                                             BorderRadius.circular(30)),
-                                    child: Text("Atras",
+                                    child: Text("<< Volver",
                                         style:
                                             TextStyle(color: Colors.white)))),
                           ),
