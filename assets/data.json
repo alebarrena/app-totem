@@ -1,0 +1,62 @@
+[
+    {
+        "name":"Pick/Put To Light",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-1.png",
+        "videos":[
+          {"label":"Descripcion 1","video":"assets/product-1a.mp4"},
+          {"label":"Descripcion 2","video":"assets/product-1b.mp4"},
+          {"label":"Descripcion 3","video":"assets/product-1C.mp4"}
+        ]
+      },
+      {
+        "name":"Pick/Put Cart",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-2.png",
+        "videos":[
+            {"label":"Descripcion 1","video":"assets/product-2a.mp4"},
+            {"label":"Descripcion 2","video":"assets/product-2b.mp4"},
+            {"label":"Descripcion 3","video":"assets/product-2C.mp4"}
+        ]
+      },
+      {
+        "name":"RFID",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-3.png",
+        "videos":[
+            {"label":"Descripcion 1","video":"assets/product-3a.mp4"},
+            {"label":"Descripcion 2","video":"assets/product-3b.mp4"},
+            {"label":"Descripcion 3","video":"assets/product-3C.mp4"}
+        ]
+      },
+      {
+        "name":"Soluciones logisticas",
+        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
+        "features":[
+          "Mayor precision y reduccion de errores",
+          "Facilidad de uso y rapida adaptacion",
+          "Multiples opciones de agregado"
+        ],
+        "image":"assets/product-4.png",
+        "videos":[
+            {"label":"Descripcion 1","video":"assets/product-4a.mp4"},
+            {"label":"Descripcion 2","video":"assets/product-4b.mp4"},
+            {"label":"Descripcion 3","video":"assets/product-4C.mp4"}
+        ]
+      }
+]

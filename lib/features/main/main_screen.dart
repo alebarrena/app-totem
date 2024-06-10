@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:innvatti/components/layout/layout.dart';
 import 'package:innvatti/features/main/pages/company_screen.dart';
@@ -19,10 +21,16 @@ class _MainScreenState extends State<MainScreen> {
   late Timer _timer;
   late bool screenSaver;
   String page = 'home';
+  dynamic products = [];
   @override
   void initState() {
     super.initState();
     screenSaver = true;
+    rootBundle.loadString("assets/data.json").then((dynamic data){
+      setState(() {
+        this.products = jsonDecode(data);
+      });
+    });
     _startTimer();
   }
 
@@ -43,68 +51,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    dynamic products= [
-      {
-        "name":"Pick/Put To Light",
-        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
-        "features":[
-          "Mayor precision y reduccion de errores",
-          "Facilidad de uso y rapida adaptacion",
-          "Multiples opciones de agregado"
-        ],
-        "image":"assets/product-1.png",
-        "videos":[
-          "product-1a.mp4",
-          "product-1b.mp4",
-          "product-1c.mp4",
-        ]
-      },
-      {
-        "name":"Pick/Put Cart",
-        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
-        "features":[
-          "Mayor precision y reduccion de errores",
-          "Facilidad de uso y rapida adaptacion",
-          "Multiples opciones de agregado"
-        ],
-        "image":"assets/product-2.png",
-        "videos":[
-          "product-2a.mp4",
-          "product-2b.mp4",
-          "product-2c.mp4",
-        ]
-      },
-      {
-        "name":"RFID",
-        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
-        "features":[
-          "Mayor precision y reduccion de errores",
-          "Facilidad de uso y rapida adaptacion",
-          "Multiples opciones de agregado"
-        ],
-        "image":"assets/product-3.png",
-        "videos":[
-          "product-3a.mp4",
-          "product-3b.mp4",
-          "product-3c.mp4",
-        ]
-      },
-      {
-        "name":"Soluciones logisticas",
-        "description":"Sistem PTL, permite mejorar la productividad de tu operacion logistica guiados por la luz, sus principales beneficios son:",
-        "features":[
-          "Mayor precision y reduccion de errores",
-          "Facilidad de uso y rapida adaptacion",
-          "Multiples opciones de agregado"
-        ],
-        "image":"assets/product-4.png",
-        "videos":[
-          "product-4a.mp4",
-          "product-4b.mp4",
-          "product-4c.mp4",
-        ]
-      },
-    ];
     return Scaffold(
         backgroundColor: Color(0xFF243c9c),
         body: (screenSaver)
