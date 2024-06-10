@@ -427,7 +427,7 @@ class _ProductScreenState extends State<ProductScreen>
                                       controller: _pageViewController,
                                       onPageChanged: _handlePageViewChanged,
                                       children: List.generate(widget.product['videos'].length, (index){
-                                        return  VideoContainer(src:widget.product['videos'][index],);
+                                        return  VideoContainer(src:widget.product['videos'][index]['video'],);
                                       })
                                     ),
                                   ),
