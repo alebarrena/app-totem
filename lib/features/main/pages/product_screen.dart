@@ -1,6 +1,8 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:innvatti/components/logo/logo.dart';
 import 'package:innvatti/features/screen/pages/company_page.dart';
 import 'package:innvatti/shared/assets_dir.dart';
@@ -427,11 +429,17 @@ class _ProductScreenState extends State<ProductScreen>
                                       controller: _pageViewController,
                                       onPageChanged: _handlePageViewChanged,
                                       children: List.generate(widget.product['videos'].length, (index){
-                                        return  Column(
-                                          children: [
-                                            Container(child:Text(widget.product['videos'][index]['label'])),
-                                            Expanded(child: VideoContainer(src:widget.product['videos'][index]['video'],)),
-                                          ],
+                                        return  Container(
+                                          padding:EdgeInsets.all(30),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Container(child:Text(widget.product['videos'][index]['label'],style:GoogleFonts.inter(fontSize:MediaQuery.of(context).size.width*.03,fontWeight: FontWeight.bold,color:Color(0xFF243c9c)))),
+                                              SizedBox(height:20),
+                                              Expanded(child: VideoContainer(src:widget.product['videos'][index]['video'],)),
+                                            ],
+                                          ),
                                         );
                                       })
                                     ),
