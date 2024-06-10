@@ -21,7 +21,7 @@ class _VideoContainerState extends State<VideoContainer> {
   @override
   void initState() {
     super.initState();
-    _controller =AssetsDir.video("assets/intro.mp4")
+    _controller =AssetsDir.video("intro.mp4")
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});

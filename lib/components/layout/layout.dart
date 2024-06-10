@@ -52,18 +52,7 @@ class _LayoutState extends State<Layout> {
     return Scaffold(
         backgroundColor: Color(0xFF243c9c),
         body: (screenSaver)
-            ? Container(child: ScreenSaver(callback: () {
-                _timer.cancel();
-                _timer = Timer(const Duration(seconds: 5), () {
-                  setState(() {
-                    screenSaver = true;
-                  });
-                });
-                setState(() {
-                  screenSaver = false;
-                });
-                print(screenSaver);
-              }))
+            ? Container(child: Container(color:Colors.red))
             : Stack(
                 children: [
                   Container(child: widget.initialWidget),
@@ -87,7 +76,7 @@ class _ScreenSaverState extends State<ScreenSaver> {
   @override
   void initState() {
     super.initState();
-    _controller = AssetsDir.video("assets/intro.mp4");//VideoPlayerController.asset("assets/intro.mp4"); // VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));//
+    _controller = AssetsDir.video("intro.mp4");//VideoPlayerController.asset("assets/intro.mp4"); // VideoPlayerController.file(File("data\\flutter_assets\\assets\\intro.mp4"));//
     _controller.initialize().then((value) {
       if (_controller.value.isInitialized) {
         _controller.setLooping(true);

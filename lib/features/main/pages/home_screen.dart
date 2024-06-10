@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Positioned(bottom:0,right:0,child: Container(width:MediaQuery.of(context).size.width * .8,child: Image.asset("assets/bg-vector.png"))),
-        Expanded(
+        Container(
           child: Column(
             children: [
               Container(

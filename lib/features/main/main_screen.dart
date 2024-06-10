@@ -54,9 +54,9 @@ class _MainScreenState extends State<MainScreen> {
         ],
         "image":"assets/product-1.png",
         "videos":[
-          "assets/product-1a.mp4",
-          "assets/product-1b.mp4",
-          "assets/product-1c.mp4",
+          "product-1a.mp4",
+          "product-1b.mp4",
+          "product-1c.mp4",
         ]
       },
       {
@@ -69,9 +69,9 @@ class _MainScreenState extends State<MainScreen> {
         ],
         "image":"assets/product-2.png",
         "videos":[
-          "assets/product-2a.mp4",
-          "assets/product-2b.mp4",
-          "assets/product-2c.mp4",
+          "product-2a.mp4",
+          "product-2b.mp4",
+          "product-2c.mp4",
         ]
       },
       {
@@ -84,9 +84,9 @@ class _MainScreenState extends State<MainScreen> {
         ],
         "image":"assets/product-3.png",
         "videos":[
-          "assets/product-3a.mp4",
-          "assets/product-3b.mp4",
-          "assets/product-3c.mp4",
+          "product-3a.mp4",
+          "product-3b.mp4",
+          "product-3c.mp4",
         ]
       },
       {
@@ -99,9 +99,9 @@ class _MainScreenState extends State<MainScreen> {
         ],
         "image":"assets/product-4.png",
         "videos":[
-          "assets/product-4a.mp4",
-          "assets/product-4b.mp4",
-          "assets/product-4c.mp4",
+          "product-4a.mp4",
+          "product-4b.mp4",
+          "product-4c.mp4",
         ]
       },
     ];
