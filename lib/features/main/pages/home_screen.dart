@@ -28,13 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
             Text("To Light",
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
           ],
         )
@@ -49,13 +49,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
             Text("Cart",
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
           ],
         )
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
           ],
         )
@@ -85,13 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
             Text("Logisticas",
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
                   fontWeight: FontWeight.w900,
-                  fontSize: (MediaQuery.of(context).size.width) * .018,
+                  fontSize: (MediaQuery.of(context).size.width) * .014,
                 ))),
           ],
         )
